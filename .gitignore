@@ -1,0 +1,3 @@
+*.pem
+venv
+.DS_Store

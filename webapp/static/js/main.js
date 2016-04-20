@@ -51,3 +51,17 @@ btn.addEventListener("click", function(){
     var q = document.getElementById("search");
     window.location = "/?q=" + q.value;
 });
+
+
+// websockets
+var WS_URL = "ws://" + location.host + "/receive";
+var inbox = new ReconnectingWebSocket(WS_URL);
+inbox.onclose = function() {
+    console.log("inbox closed");
+    this.inbox = new WebSocket(inbox.url);
+}
+
+inbox.onmessage = function(msg) {
+     var msg = JSON.parse(msg.data);
+     console.log(msg);
+}

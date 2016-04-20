@@ -11,7 +11,7 @@ API_TOKEN = "6f53dff486eb3b0e22fc502c49a43a93f6c40a6e"
 QUEUE_NAME = "tweetsQueue"
 WAIT_TIME = 10 # time to wait between each SQS poll
 TOPIC_NAME = "tweet-topic"
-SNS_ARN = "arn:aws:sns:us-east-1:685580971598:SNSTweets"
+SNS_ARN = "arn:aws:sns:us-east-1:215539874263:tweet-topic"
 
 sqs = boto3.resource('sqs')
 queue = sqs.get_queue_by_name(QueueName=QUEUE_NAME)
